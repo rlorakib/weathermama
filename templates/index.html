@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Weather App</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+       font-family:Ubuntu,sans-serif;
+    }
+  </style>
+</head>
+<body style="text-align:center;">
+<h1>Weather App</h1>
+<br>
+<div style="display:flex; justify-content: space-evenly;">
+  {% for dhaka in weather_updates %}
+<div>
+  <h3>{{dhaka.city}}</h3>
+  <img src="http://openweathermap.org/img/wn/{{dhaka.icon}}@2x.png" alt="">
+  <p>{{ dhaka.temp | floatformat }}C</p>
+  <p>{{dhaka.weather}}</p>
+ </div>
+{% endfor %}
+</div>
+</body>
+</html>
+
